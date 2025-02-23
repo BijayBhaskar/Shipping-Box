@@ -3,15 +3,15 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { useSelector } from "react-redux"; // Import Redux to check data
+import { useSelector } from "react-redux";
 
 const CustomNavbar = () => {
   const location = useLocation();
-  const boxList = useSelector((state) => state.boxes); // Fetch boxes from Redux
+  const boxList = useSelector((state) => state.boxes);
   const [isBoxListEnabled, setIsBoxListEnabled] = useState(false);
 
   useEffect(() => {
-    // Enable "Box List" tab if data exists
+   
     setIsBoxListEnabled(boxList.length > 0);
   }, [boxList]);
 
@@ -49,22 +49,3 @@ const CustomNavbar = () => {
 };
 
 export default CustomNavbar;
-
-
-
-// import { Link } from 'react-router-dom';
-
-// const Navbar = () => (
-//   <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-//     <div className="container">
-//       <Link className="navbar-brand" to="/">Box App</Link>
-//       <div className="navbar-nav">
-//         <Link className="nav-link" to="/">Add Box</Link>
-//         <Link className="nav-link" to="/list">Box List</Link>
-//       </div>
-//     </div>
-//   </nav>
-// );
-
-// export default Navbar;
-
