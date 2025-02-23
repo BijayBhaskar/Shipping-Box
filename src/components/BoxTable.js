@@ -21,8 +21,9 @@ const BoxTable = () => {
             {boxes.length === 0 ? (
                 <p className="text-muted">No boxes added yet.</p>
             ) : (
+                <div className='table-responsive'>
                 <table className="table table-striped">
-                    <thead className="table-dark">
+                    <thead className="table-info">
                         <tr>
                             <th>Receiver Name</th>
                             <th>Weight (kg)</th>
@@ -45,6 +46,7 @@ const BoxTable = () => {
                         ))}
                     </tbody>
                 </table>
+                </div>
             )}
         </div>
     );
